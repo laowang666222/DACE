@@ -45,6 +45,7 @@ def train(configs):
         else:
             train_data.append(plan_meta[:-1])
 
+    
     # split train_data into train_data and val_data by 9:1
     train_data, val_data = train_test_split(
         train_data, test_size=0.1, random_state=configs["random_seed"]
@@ -206,6 +207,7 @@ if __name__ == "__main__":
 
     # set random seed
     set_seed(configs["random_seed"])
+
     if configs["process_plans"]:
         prepare_plans(configs)
     elif configs["test_all"]:
